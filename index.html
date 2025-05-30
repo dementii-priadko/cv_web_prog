@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Source+Code+Pro:wght@400;500;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Dementii Priadko - CV</title>
+</head>
+<body class="cv-container">
+<header class="cv-header">
+    <h1 class="main-title">Dementii Priadko</h1>
+    <p class="contact-info">Email: <a href="mailto:dementii.priadko@gmail.com" class="contact-link">dementii.priadko@gmail.com</a></p>
+    <p class="contact-info">Phone: +380508220942</p>
+    <p class="contact-info">LinkedIn: <a href="https://linkedin.com/in/dementii-priadko-322988212" target="_blank" class="contact-link">linkedin.com/in/dementii-priadko-322988212</a>
+    </p>
+    <button id="theme-toggle" class="theme-toggle-btn">Toggle Theme</button>
+</header>
+
+<section id="objective" class="cv-section objective-section">
+    <h2 class="section-title">Objective</h2>
+    <p class="section-content">Dedicated Backend Engineer with 3 years of experience in API management and data processing. Seeking new
+        opportunities to grow and apply problem-solving skills to create efficient and scalable solutions.</p>
+</section>
+
+<section id="experience" class="cv-section experience-section">
+    <h2 class="section-title">Professional Experience</h2>
+    <div class="job-entry">
+        <h3 class="job-title">Backend/Full Stack Engineer</h3>
+        <p class="company-name"><strong>Undefeated</strong></p>
+        <p class="job-period">USA | June 2021 – Present</p>
+        <ul class="responsibilities-list">
+            <li class="responsibility-item">Managed and integrated APIs to support various application functionalities.</li>
+            <li class="responsibility-item">Processed large datasets to ensure accurate and timely data delivery.</li>
+            <li class="responsibility-item">Collaborated with cross-functional teams to translate requirements into technical solutions.</li>
+            <li class="responsibility-item">Optimized database queries to improve system performance.</li>
+            <li class="responsibility-item">Ensured code quality through regular code reviews and adherence to best practices.</li>
+        </ul>
+    </div>
+    <div class="job-entry">
+        <h3 class="job-title">Software Engineer / DBRE</h3>
+        <p class="company-name"><strong>Posgres.ai</strong></p>
+        <p class="job-period">USA | Mar 2025 – Present</p>
+        <ul class="responsibilities-list">
+            <li class="responsibility-item">Performed health checks on PostgreSQL databases to ensure optimal performance.</li>
+            <li class="responsibility-item">Developed a pipeline for zero downtime PostgreSQL database</li>
+            <li class="responsibility-item">Assisted with development of PostgreSQL monitoring tool</li>
+            <li class="responsibility-item">Performed a database clustering analysis for a company with a multi-billion valuation</li>
+        </ul>
+    </div>
+</section>
+
+<section id="education" class="cv-section education-section">
+    <h2 class="section-title">Education</h2>
+    <p class="degree-title"><strong>Bachelor of Science in Cybersecurity (Ongoing)</strong></p>
+    <p class="institution-name">Lviv Polytechnic National University</p>
+    <p class="education-period">Lviv, Ukraine | Sept. 2022 – Present</p>
+</section>
+
+<section id="skills" class="cv-section skills-section">
+    <h2 class="section-title">Technical Skills</h2>
+    <ul class="skills-list">
+        <li class="skill-item"><strong class="skill-category">Programming Languages:</strong> Python, SQL, some C</li>
+        <li class="skill-item"><strong class="skill-category">Frameworks & Libraries:</strong> Django, Django REST, Flask, Peewee, BeautifulSoup, Selenium,
+            SQLAlchemy, PIL, much more
+        </li>
+        <li class="skill-item"><strong class="skill-category">Databases:</strong> PostgreSQL, MySQL</li>
+        <li class="skill-item"><strong class="skill-category">Cloud Platforms:</strong> Heroku, AWS</li>
+        <li class="skill-item"><strong class="skill-category">Version Control:</strong> Git</li>
+        <li class="skill-item"><strong class="skill-category">Other Skills:</strong> Web Scraping, Problem-solving, Fast learner</li>
+    </ul>
+</section>
+
+<section id="references" class="cv-section references-section">
+    <h2 class="section-title">References</h2>
+    <p class="section-content">Available upon request.</p>
+</section>
+
+<section id="contact" class="cv-section contact-section">
+    <h2 class="section-title">Contact Me</h2>
+    <form id="contact-me-form" class="contact-form" action="https://formspree.io/f/mqaqekod" method="POST">
+        <label class="form-label">Name <input type="text" name="name" class="form-input" required></label>
+        <label class="form-label">Email <input type="email" name="email" class="form-input" required></label>
+        <label class="form-label">Message <textarea name="message" class="form-textarea"></textarea></label>
+        <button type="submit" class="form-submit-btn">Send</button>
+    </form>
+</section>
+
+<section id="comments-section" class="cv-section comments-section">
+    <h2 class="section-title">Previous Employers' Comments</h2>
+    <div id="comments-container" class="comments-container"></div>
+</section>
+
+<footer id="footer-info" class="cv-footer"></footer>
+
+<div id="feedback-modal" class="feedback-modal">
+    <form id="feedback-form" class="feedback-form" action="https://formspree.io/f/mqaqekod" method="POST">
+        <label class="form-label">Name <input type="text" name="name" class="form-input" required></label>
+        <label class="form-label">Email <input type="email" name="email" class="form-input" required></label>
+        <label class="form-label">Phone <input type="tel" name="phone" class="form-input"></label>
+        <label class="form-label">Message <textarea name="message" class="form-textarea"></textarea></label>
+        <button type="submit" class="form-submit-btn">Send</button>
+    </form>
+</div>
+
+<script>
+// Store OS and browser info in localStorage
+localStorage.setItem('os', navigator.platform);
+localStorage.setItem('browser', navigator.userAgent);
+document.getElementById('footer-info').textContent =
+  'OS: ' + localStorage.getItem('os') + ', Browser: ' + localStorage.getItem('browser');
+
+// Fetch comments and display
+fetch('https://jsonplaceholder.typicode.com/posts/23/comments')
+  .then(res => res.json())
+  .then(data => {
+    const container = document.getElementById('comments-container');
+    data.forEach(comment => {
+      const p = document.createElement('p');
+      p.className = 'comment-item';
+      p.textContent = comment.body;
+      container.appendChild(p);
+    });
+  });
+
+// Show feedback modal after 1 minute
+setTimeout(() => {
+  document.getElementById('feedback-modal').classList.add('show');
+}, 60000);
+
+// Auto-switch theme based on hour (07:00–21:00 is day)
+const hour = new Date().getHours();
+if (hour < 7 || hour >= 21) {
+  document.body.classList.add('dark-mode');
+}
+
+// Toggle theme manually
+document.getElementById('theme-toggle').addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+});
+</script>
+</body>
+</html>
